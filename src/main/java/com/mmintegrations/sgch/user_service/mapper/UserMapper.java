@@ -19,6 +19,9 @@ public class UserMapper {
 
         if (!StringUtils.isEmpty(request.phone()))
             user.setPhone(request.phone());
+
+        if (!StringUtils.isEmpty(request.address()))
+            user.setAddress(request.address());
     }
 
     public GetUserResponse createGetUserResponse(User user) {
