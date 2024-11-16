@@ -3,6 +3,7 @@ package com.mmintegrations.sgch.user_service.mapper;
 import com.mmintegrations.sgch.user_service.model.User;
 import com.mmintegrations.sgch.user_service.model.request.UpdateUserRequest;
 import com.mmintegrations.sgch.user_service.model.response.GetUserResponse;
+import com.mmintegrations.sgch.user_service.model.response.UserUpdatedResponse;
 import com.mmintegrations.sgch.user_service.util.StringUtils;
 import org.springframework.stereotype.Component;
 
@@ -27,8 +28,17 @@ public class UserMapper {
                 user.getLastname(),
                 user.getEmail(),
                 user.getPhone(),
+                user.getAddress(),
                 user.getCreatedAt()
         );
     }
 
+    public UserUpdatedResponse createUserUpdatedResponse(User user) {
+        return new UserUpdatedResponse(
+                user.getName(),
+                user.getLastname(),
+                user.getPhone(),
+                user.getAddress()
+        );
+    }
 }

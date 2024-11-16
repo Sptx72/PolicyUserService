@@ -6,7 +6,8 @@ public record UpdateUserRequest(
         UUID id,
         String name,
         String lastname,
-        String phone
+        String phone,
+        String address
 ) {
 
 }

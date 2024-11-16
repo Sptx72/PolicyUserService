@@ -41,11 +41,7 @@ public class UserServiceImpl implements UserService {
 
         userRepository.save(user);
 
-        return new UserUpdatedResponse(
-                user.getName(),
-                user.getLastname(),
-                user.getPhone()
-        );
+        return userMapper.createUserUpdatedResponse(user);
     }
 
     @Override
